@@ -1,0 +1,11 @@
+# GitHub - CCG UNAM account
+Host unam.github.com
+HostName github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa_unam
+
+# GitHub - Personal
+Host personal.github.com
+HostName github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa_personal
