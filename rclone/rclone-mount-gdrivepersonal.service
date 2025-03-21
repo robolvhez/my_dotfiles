@@ -1,0 +1,14 @@
+[Unit]
+Description=RClone Mount Service - Google Drive Personal
+After=network-online.target
+
+[Service]
+Type=simple
+; User=rob
+ExecStart=/usr/bin/rclone mount gdrive-personal: /mnt/rclone/google-drive-personal/ --vfs-cache-mode writes
+ExecStop=/bin/fusermount -u /mnt/rclone/google-drive-personal/
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+

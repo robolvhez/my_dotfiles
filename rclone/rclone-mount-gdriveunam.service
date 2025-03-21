@@ -1,0 +1,14 @@
+[Unit]
+Description=RClone Mount Service - Google Drive UNAM
+After=network-online.target
+
+[Service]
+Type=simple
+; User=rob
+ExecStart=/usr/bin/rclone mount gdrive-unam: /mnt/rclone/google-drive-unam/ --vfs-cache-mode writes
+ExecStop=/bin/fusermount -u /mnt/rclone/google-drive-unam/
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,14 @@
+[Unit]
+Description=RClone Mount Service - PikaPods (Unseen Library)
+After=network-online.target
+
+[Service]
+Type=simple
+; User=rob
+ExecStart=/usr/bin/rclone mount --read-only unseen-library:/ /mnt/rclone/unseen-library --vfs-cache-mode writes
+ExecStop=/bin/fusermount -u /mnt/rclone/unseen-library/
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+

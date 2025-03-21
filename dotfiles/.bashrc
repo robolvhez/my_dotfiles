@@ -42,8 +42,5 @@ alias lsn='ls_extended -l | awk "{print \$9, \$6, \$7, \$8}"'  # List with only 
 alias pyvenv="python -m venv .venv"
 alias pyactivate="source .venv/bin/activate"
 
-# DNAnexus
-dx-init(){
-  # starts the Docker image with the dx-toolkit
-  docker run -v `pwd`:/dx-toolkit -w /dx-toolkit -it --rm dx-toolkit
-}
+# Mount RClone
+# systemctl --user start ~/.config/systemd/user/rclone-mount-*
